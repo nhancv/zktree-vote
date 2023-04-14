@@ -13,3 +13,18 @@ Anonymous voting on Ethereum blockchain using zero knowledge proof
 The app uses MetaMask to connect the blockchain, so the MetaMask extension have to be installed, and connected to the Hardhat local node. The smart contract owner is the first Hardhat account, and the second account is set as a validator by the deployment script.
 
 For more details, please read my article on [Medium](https://thebojda.medium.com/how-i-built-an-anonymous-voting-system-on-the-ethereum-blockchain-using-zero-knowledge-proof-d5ab286228fd)
+
+## Demo
+
+- Click 'Registration to vote' button -> You see "your commitment" data will be generated randomly -> Click 'Copy to clipboard' -> Back
+- Connect Metamask to 'Validator wallet': Default the validator is index #1
+- Click 'Validator tool' -> Paste the commitment data copied above to 'commitment', you can type any uniqua value for 'unique hash' -> Click 'Send to blockchain' -> Confirm Metamask -> Back
+- Connect Metamask to 'User wallet'
+- Click 'Vote' -> Select option and 'Send to blockchain' -> Confirm Metmask
+- You can try to Duplicate Vote to see the error msg
+
+=> The demo prove that:
++ `[off-chain]` User generates a public commitment data
++ `[on-chain]` Validator submit that user's commitment to blockchain
++ `[off-chain]` User generates nullifier hash, Merkle root and ZK Proofs by commitment data
++ `[on-chain]` User create vote transaction with generated data set (nullifier + merkle root + zk proofs) above which seem unlink anything to the public 'commitment' data
