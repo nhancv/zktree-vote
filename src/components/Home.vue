@@ -5,12 +5,10 @@
       <div class="col-lg-4">
         <div class="text-center vstack gap-3">
           <h1>Simple voting system</h1>
-          <a href="#/registration" class="btn btn-primary"
-            >Registration to vote</a
-          >
-          <a href="#/validator" class="btn btn-primary">Validator tool</a>
-          <a href="#/vote" class="btn btn-primary">Vote</a>
-          <a href="#/results" class="btn btn-primary">Results</a>
+          <a href="#/generateCommitment" class="btn btn-primary">Generate Commitment (off-chain)</a>
+          <a href="#/registerCommitment" class="btn btn-primary">Register Commitment (write on-chain)</a>
+          <a href="#/vote" class="btn btn-primary">Vote (write on-chain)</a>
+          <a href="#/voteResults" class="btn btn-primary">Vote Results (read on-chain)</a>
           <a
             href="https://thebojda.medium.com/how-i-built-an-anonymous-voting-system-on-the-ethereum-blockchain-using-zero-knowledge-proof-d5ab286228fd"
             >Check my article</a

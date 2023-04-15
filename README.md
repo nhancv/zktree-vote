@@ -16,6 +16,7 @@ For more details, please read my article on [Medium](https://thebojda.medium.com
 
 ## Demo
 
+- TREE_LEVELS = 20 => Max commitment can be added = 2 ** TREE_LEVELS = 1,048,576 items
 - Click 'Registration to vote' button -> You see "your commitment" data will be generated randomly -> Click 'Copy to clipboard' -> Back
 - Connect Metamask to 'Validator wallet': Default the validator is index #1
 - Click 'Validator tool' -> Paste the commitment data copied above to 'commitment', you can type any uniqua value for 'unique hash' -> Click 'Send to blockchain' -> Confirm Metamask -> Back
@@ -24,7 +25,9 @@ For more details, please read my article on [Medium](https://thebojda.medium.com
 - You can try to Duplicate Vote to see the error msg
 
 => The demo prove that:
-+ `[off-chain]` User generates a public commitment data
-+ `[on-chain]` Validator submit that user's commitment to blockchain
++ `[off-chain]` User generates a public commitment data (numbers)
++ `[on-chain]` Validator submita that user's commitment to blockchain
 + `[off-chain]` User generates nullifier hash, Merkle root and ZK Proofs by commitment data
 + `[on-chain]` User create vote transaction with generated data set (nullifier + merkle root + zk proofs) above which seem unlink anything to the public 'commitment' data
++ The `Verifier.sol` and `ZKTreeVote.sol` are seperated context, unlink data. But default `ZKTreeVote` need an instance of `Verifier` on same-chain to complete the app logic.
++ To verify a valid 'nullifier' purpose only, you can deploy `Verifier.sol` elsewhere on another chain.

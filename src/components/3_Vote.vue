@@ -64,6 +64,7 @@ import * as ethers from "ethers";
 import { calculateMerkleRootAndZKProof } from "zk-merkle-tree";
 
 // the default verifier is for 20 levels, for different number of levels, you need a new verifier circuit
+// => Max commitment can be added = 2 ** TREE_LEVELS = 1,048,576 items
 const TREE_LEVELS = 20;
 
 @Component

@@ -6,10 +6,10 @@
 import { Component, Vue } from "vue-facing-decorator";
 
 import Home from "./Home.vue";
-import ValidatorTool from "./ValidatorTool.vue";
-import VoterRegistration from "./VoterRegistration.vue";
-import Vote from "./Vote.vue";
-import Results from "./Results.vue";
+import GenerateCommitment from "./1_GenerateCommitment.vue";
+import RegisterCommitment from "./2_RegisterCommitment.vue";
+import Vote from "./3_Vote.vue";
+import VoteResults from "./4_VoteResults.vue";
 
 @Component
 export default class App extends Vue {
@@ -28,10 +28,10 @@ export default class App extends Vue {
   getMainComponent() {
     const currentPath = this.locationHash.slice(1) || "/";
     if (currentPath == "/") return Home;
-    if (currentPath == "/validator") return ValidatorTool;
-    if (currentPath == "/registration") return VoterRegistration;
+    if (currentPath == "/generateCommitment") return GenerateCommitment;
+    if (currentPath == "/registerCommitment") return RegisterCommitment;
     if (currentPath == "/vote") return Vote;
-    if (currentPath == "/results") return Results;
+    if (currentPath == "/voteResults") return VoteResults;
   }
 }
 </script>

@@ -15,7 +15,7 @@ async function main() {
     const verifier = await Verifier.deploy();
     console.log(`Verifier address: ${verifier.address}`)
 
-    const ZKTreeVote = await ethers.getContractFactory("ZKTreeVote");
+    const ZKTreeVote = await ethers.getContractFactory("ZKTreeAppVote");
     const zktreevote = await ZKTreeVote.deploy(TREE_LEVELS, mimcsponge.address, verifier.address, 4);
     console.log(`ZKTreeVote address: ${zktreevote.address}`)
 

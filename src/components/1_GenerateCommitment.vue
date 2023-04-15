@@ -30,7 +30,7 @@ import QRCode from "qrcode";
 import copyToClipboard from "copy-to-clipboard";
 
 @Component
-export default class VoterRegistration extends Vue {
+export default class GenerateCommitment extends Vue {
   public commitment: any = "";
   public qrcodeDataUrl: string = "";
 
