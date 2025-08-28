@@ -26,7 +26,7 @@ For more details, please read my article on [Medium](https://thebojda.medium.com
 
 => The demo prove that:
 + `[off-chain]` User generates a public commitment data (numbers)
-+ `[on-chain]` Validator submit that user's commitment to blockchain
++ `[on-chain]` Validator (the 2nd hardhat account index#1 as a validator) submit that user's commitment to blockchain
 + `[off-chain]` User generates nullifier hash, Merkle root and ZK Proofs by commitment data
 + `[on-chain]` User create vote transaction with generated data set (nullifier + merkle root + zk proofs) above which seem unlink anything to the public 'commitment' data
 + The `Verifier.sol` and `ZKTreeVote.sol` are seperated context, unlink data. But default `ZKTreeVote` need an instance of `Verifier` on same-chain to complete the app logic.
